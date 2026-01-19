@@ -56,6 +56,40 @@ button:hover {
     padding: 0px;
 }
 
+#sprites {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sprite {
+    display: flex;
+
+    margin-right: 5px;
+    margin-bottom: 5px;
+
+    background-color: rgb(170, 207, 247);
+    border-radius: 5px;
+}
+
+.sprite.selected {
+    background-color: rgb(71, 119, 239);
+    color: white;
+}
+
+.sprite p {
+    margin: 5px;
+    padding: 2px;
+}
+
+.sprite p:hover {
+    background-color: rgb(123, 168, 234);
+    border-radius: 5px;
+}
+
+.sprite.selected p:hover {
+    background-color: rgb(61, 95, 209);
+}
+
 #buttons {
     margin-left: 15px;
     flex-shrink: 0;
@@ -162,8 +196,8 @@ pre[class="blocks"] {
 
 #new-sprite-button {
     /* margin-top: 5px; */
-    margin-bottom: 5px;
-    position: fixed;
+    margin-bottom: 10px;
+    /* position: fixed; */
 }
 
 #turbo-mode-text {
