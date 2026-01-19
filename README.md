@@ -85,3 +85,5 @@ setVar("mycoolvar", answer())
 <br>
 <p>I think that's it</p>
 
+<h1>Notice</h1>
+<p>The code editor (CodeMirror) is under the MIT liscense (see <a href="https://github.com/codemirror/dev/blob/main/LICENSE">https://github.com/codemirror/dev/blob/main/LICENSE</a>). The block renderer (scratchblocks) is under the MIT liscense (see <a href="https://github.com/scratchblocks/scratchblocks/blob/main/LICENSE">https://github.com/scratchblocks/scratchblocks/blob/main/LICENSE</a>). Scratch Script is in no way affiliated nor endorsed by scratchblocks, Scratch, the Scratch Foundation, or the Scratch Team. Scratch is developed by the Lifelong Kindergarten Group at the MIT Media Lab. See the <a href="https://scratch.mit.edu">Scratch Website.</a></p>
