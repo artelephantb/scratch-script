@@ -1,6 +1,22 @@
 :root {
     --height: calc(100vh - 50px);
 }
+
+button {
+    padding: 10px;
+
+    background-color: rgb(71, 119, 239);
+
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(61, 95, 209);
+}
+
 #preview {
     width: 100%;
     /* height: var(--height); */
@@ -48,7 +64,11 @@
 #title {
     height: 40px;
     display: flex;
-    margin: 5px;
+
+    margin-bottom: 5px;
+    padding: 10px;
+
+    background-color: rgb(9, 63, 163);
 }
 
 #title img {
@@ -70,14 +90,7 @@ a:has(button[id="documentation-button"]) {
 }
 
 .header-btn {
-    height: 40px;
     margin-left: 5px;
-    background-color: #ffd587;
-    border: 2px solid black;
-    border-radius: 5px;
-    vertical-align: top;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 a:has(button.header-btn.left) {
@@ -87,10 +100,6 @@ a:has(button.header-btn.left) {
 pre[class="blocks"] {
     margin: 2px;
     padding: 0px;
-}
-
-#editor-tabs button {
-    height: 25px;
 }
 
 #container hr {
@@ -148,7 +157,7 @@ pre[class="blocks"] {
 }
 
 #sprite-table {
-    margin-top: 30px;
+    margin-top: 45px;
 }
 
 #new-sprite-button {
