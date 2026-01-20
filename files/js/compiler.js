@@ -690,10 +690,9 @@ async function compile() {
         console.log(JSON.stringify(compiled, null, 4));
     } catch (e) {
         if (!e.message.startsWith("CompileError")) {
-            alert("An unexpected error was encountered while compiling — " + e.message);
+            showErrorMessage("An unexpected error was encountered while compiling", e.message);
         } else {
-            alert(e.message);
-            console.error(e);
+            showErrorMessage("An error occurred", e.message);
         }
         return null;
     }
