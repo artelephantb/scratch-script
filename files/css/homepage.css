@@ -33,6 +33,7 @@ a:has(button.header-btn.left) {
     margin-right: auto;
     margin-top: 20px;
     font-family: Verdana;
+    text-align: center;
 }
 
 #title {
@@ -90,6 +91,7 @@ a:has(button.header-btn.left) {
     flex-wrap: wrap;
 }
 
+
 #docs-button {
     color: black;
     font-weight: 400;
@@ -103,4 +105,46 @@ a:has(button.header-btn.left) {
 
 #docs-button:hover {
     background-color: rgb(222, 215, 162);
+}
+
+
+#examples-button {
+    color: black;
+    font-weight: 400;
+
+    padding: 10px;
+    background-color: rgb(224, 194, 234);
+    border: 4px solid rgb(186, 113, 208);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#examples-button:hover {
+    background-color: rgb(211, 162, 222);
+}
+
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.project {
+    width: 120px;
+
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.project img {
+    width: 120px;
+    height: 90px;
+
+    border: 1px solid black;
+}
+
+.project a {
+    text-decoration: none;
 }
