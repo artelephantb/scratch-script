@@ -6,7 +6,7 @@ let projectName = "My Project"
 let templates = {}
 let keys = {}
 
-let currentTab = 'code';
+let currentTab = "code";
 
 templates.costume = `<tr><td style="padding: 5px" title="Remove">X</td><td><img style="width: 60px"></td><td class="name-box-costume">`
 templates.sound = `<tr><td style="padding: 5px" title="Remove">X</td><td><audio controls></audio></td><td class="name-box-sound">`
@@ -17,12 +17,12 @@ window.addEventListener("keyup", shiftCheck)
 
 
 function showErrorMessage(title, message) {
-    let errorMessage = document.querySelector('#error-message')
+    let errorMessage = document.querySelector("#error-message")
 
-    errorMessage.getElementsByTagName('h2')[0].innerText = title
-    errorMessage.getElementsByTagName('p')[0].innerText = message
+    errorMessage.getElementsByTagName("h2")[0].innerText = title
+    errorMessage.getElementsByTagName("p")[0].innerText = message
 
-    document.querySelector('#error-message').hidden = false
+    document.querySelector("#error-message").hidden = false
 }
 
 
@@ -44,36 +44,36 @@ function handleGreenFlag() {
 }
 
 function switchToCode() {
-    document.getElementById(`editor-${currentTab}-button`).classList.remove('selected')
-    document.getElementById('editor-code-button').classList.add('selected')
+    document.getElementById(`editor-${currentTab}-button`).classList.remove("selected")
+    document.getElementById("editor-code-button").classList.add("selected")
 
     document.querySelector("#editor").hidden = false
     document.querySelector("#costume-editor").hidden = true
     document.querySelector("#sound-editor").hidden = true
 
-    currentTab = 'code'
+    currentTab = "code"
 }
 
 function switchToCostumes() {
-    document.getElementById(`editor-${currentTab}-button`).classList.remove('selected')
-    document.getElementById('editor-costumes-button').classList.add('selected')
+    document.getElementById(`editor-${currentTab}-button`).classList.remove("selected")
+    document.getElementById("editor-costumes-button").classList.add("selected")
 
     document.querySelector("#editor").hidden = true
     document.querySelector("#costume-editor").hidden = false
     document.querySelector("#sound-editor").hidden = true
 
-    currentTab = 'costumes'
+    currentTab = "costumes"
 }
 
 function switchToSounds() {
-    document.getElementById(`editor-${currentTab}-button`).classList.remove('selected')
-    document.getElementById('editor-sounds-button').classList.add('selected')
+    document.getElementById(`editor-${currentTab}-button`).classList.remove("selected")
+    document.getElementById("editor-sounds-button").classList.add("selected")
 
     document.querySelector("#editor").hidden = true
     document.querySelector("#costume-editor").hidden = true
     document.querySelector("#sound-editor").hidden = false
 
-    currentTab = 'sounds'
+    currentTab = "sounds"
 }
 
 async function costumeChanged() {
@@ -212,8 +212,7 @@ async function decodeSprite(zip, sprite) {
 
     // Costumes
     for (let costume of spriteCostumes) {
-        // alert(`Sprite: ${getSpriteName(sprite)}, Costume: ${costume.name}`)
-        assets.list[costume.hash] = await zip.file("assets/" + costume.hash).async("blob")//"arraybuffer")
+        assets.list[costume.hash] = await zip.file("assets/" + costume.hash).async("blob")
         const url = URL.createObjectURL(
             new Blob([assets.list[costume.hash]], {
                 type: (costume.hash.split(".").pop() == "svg") ? "image/svg+xml": null,
@@ -247,7 +246,7 @@ async function decodeSprite(zip, sprite) {
     let spriteElement = htmlToNode(templates.sprite)
     spriteElement.children[0].addEventListener("click", function() {confirm("Are you sure you want to delete this sprite?") ? removeSprite(sprite): null})
     spriteElement.children[1].dataset.spriteName = sprite
-    spriteElement.children[1].setAttribute("onclick", `loadSprite('${sprite}')`)
+    spriteElement.children[1].setAttribute("onclick", `loadSprite("${sprite}")`)
     spriteElement.children[1].innerText = getSpriteName(sprite, true)
 
     if (sprite == "stage") {
@@ -292,16 +291,16 @@ function loadSprite(spriteName, shouldKeep) {
     document.querySelectorAll(".sprite-item").forEach(el => el.className = "sprite-item")
 
     try {
-        document.querySelector(`#sprites div p[data-sprite-name="${currentSprite}"]`).parentNode.classList.remove('selected')
+        document.querySelector(`#sprites div p[data-sprite-name="${currentSprite}"]`).parentNode.classList.remove("selected")
     } catch (error) {
         if (!error instanceof TypeError) throw error
     }
-    document.querySelector(`#sprites div p[data-sprite-name="${spriteName}"]`).parentNode.classList.add('selected')
+    document.querySelector(`#sprites div p[data-sprite-name="${spriteName}"]`).parentNode.classList.add("selected")
 
     document.querySelector("#selected-sprite").innerText = "Sprite: " + getSpriteName(spriteName, true)
     document.querySelector("#selected-sprite").hidden = false
 
-    if (!(shouldKeep == false)) {
+    if (shouldKeep) {
         saveCurrentSpriteCode()
     }
     currentSprite = spriteName
@@ -425,7 +424,7 @@ function newSprite() {
         let spriteElement = htmlToNode(templates.sprite)
         spriteElement.children[0].addEventListener("click", function() {confirm("Are you sure you want to delete this sprite?") ? removeSprite(encodedSpriteName): null})
         spriteElement.children[1].dataset.spriteName = encodedSpriteName
-        spriteElement.children[1].setAttribute("onclick", `loadSprite('${encodedSpriteName}')`)
+        spriteElement.children[1].setAttribute("onclick", `loadSprite("${encodedSpriteName}")`)
         spriteElement.children[1].innerText = getSpriteName(encodedSpriteName, true)
 
         document.getElementById("sprites").appendChild(spriteElement)

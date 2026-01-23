@@ -23,7 +23,6 @@ function getParamsArray(params) {
     let parenLevel = 0;
     let output = [];
     let inString = false;
-    // console.log(str);
     let final = "";
     let i = 0;
     while (i < str.length) {
@@ -146,15 +145,15 @@ function getBroadcasts() {
 }
 
 function getCostumes(sprite) {
-    let example = {
-        name: "costume1",
-        bitmapResolution: 1,
-        dataFormat: "svg",
-        assetId: "bcf454acf82e4504149f7ffe07081dbc",
-        md5ext: "bcf454acf82e4504149f7ffe07081dbc.svg",
-        rotationCenterX: 48,
-        rotationCenterY: 50,
-    };
+    // Example:
+    //   name: "costume1",
+    //   bitmapResolution: 1,
+    //   dataFormat: "svg",
+    //   assetId: "bcf454acf82e4504149f7ffe07081dbc",
+    //   md5ext: "bcf454acf82e4504149f7ffe07081dbc.svg",
+    //   rotationCenterX: 48,
+    //   rotationCenterY: 50,
+
     let createdCostumeList = [];
     for (let costume of assets.sprites[sprite].costumeList) {
         let newCostume = {
@@ -172,15 +171,15 @@ function getCostumes(sprite) {
 }
 
 function getSounds(sprite) {
-    let example = {
-        name: "Meow",
-        assetId: "83c36d806dc92327b9e7049a565c6bff",
-        dataFormat: "wav",
-        format: "",
-        rate: 48000,
-        sampleCount: 40682,
-        md5ext: "83c36d806dc92327b9e7049a565c6bff.wav",
-    };
+    // Example
+    //   name: "Meow",
+    //   assetId: "83c36d806dc92327b9e7049a565c6bff",
+    //   dataFormat: "wav",
+    //   format: "",
+    //   rate: 48000,
+    //   sampleCount: 40682,
+    //   md5ext: "83c36d806dc92327b9e7049a565c6bff.wav",
+
     let createdSoundList = [];
     for (let sound of assets.sprites[sprite].soundList) {
         let newSound = {
